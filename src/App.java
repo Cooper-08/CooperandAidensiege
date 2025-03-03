@@ -57,18 +57,18 @@ public class App {
         System.out.println("How much would you like to buy? You can get " + thing.getAmount() + " of these");
         int quantity = sc.nextInt(); 
         sc.nextInt(quantity);
-        int number = quantity * cost;
+        double number = quantity * thing.getCost();
         System.out.println(number);
         }
         }
 }
 
-public static int whatubuy(Scanner sc, ArrayList<r6> itemshop) {
-    int item = sc.nextInt();
-    if(item < 1 || item > itemshop.size()) {
-        System.out.println("You can't buy something that's not there dummy.");
-    return whatubuy(sc, itemshop);
+    public static int whatubuy(Scanner sc, ArrayList<r6> itemshop) {
+        int item = sc.nextInt();
+        if (item < 1 || item > itemshop.size()) {
+            System.out.println("You can't buy something that's not there dummy.");
+            return whatubuy(sc, itemshop);
+        }
+        return item;
     }
-    return item;
-}
 }

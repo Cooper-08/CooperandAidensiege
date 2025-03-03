@@ -21,6 +21,10 @@ import java.util.Random;
         return amount;
     }
 
+    public int getDiscount() {
+        return discount;
+    }
+
     Random r = new Random();
     boolean IsOnSale = false;
 
@@ -31,6 +35,7 @@ import java.util.Random;
         this.name = name;
         this.cost = cost;
         this.amount = amount;
+        this.discount = discount;
         
     }
 
