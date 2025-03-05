@@ -4,26 +4,34 @@ import java.util.Random;
 
 
     String name;
+    public int cost;
+    public int amount;
     
     
     public String getName() {
         return name;
     }
 
-    public int cost;
-    int amount;
-
+    //returns cost of an item
     public double getCost() {
         return cost;
     }
-
+    //returns amount for an item
     public int getAmount() {
         return amount;
     }
+    //
+  public int buy(int quantity){
 
-    public int getDiscount() {
-        return discount;
-    }
+    if(amount - quantity < 0) {
+        int boughtAmount = amount; 
+         amount = 0;
+         return boughtAmount;
+    } else {
+         amount = amount - quantity;
+         return quantity;
+  }
+}
 
     Random r = new Random();
     boolean IsOnSale = false;
@@ -35,7 +43,6 @@ import java.util.Random;
         this.name = name;
         this.cost = cost;
         this.amount = amount;
-        this.discount = discount;
         
     }
 

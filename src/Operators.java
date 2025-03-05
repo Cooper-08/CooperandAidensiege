@@ -1,21 +1,12 @@
-
 class Operator extends r6 {
 
     public Operator(String name, int cost, int amount) {
-        super(name, cost, amount, discount);
+        super(name, cost, amount);
 
         if (IsOnSale == true) {
-            cost = cost - saleprice;
+            cost = cost - saleprice%cost;
         }
-    }
-    @Override
-    public void getCost() {
-        if (isFriendly) {
-            addHappyPoints(2);
-        } else {
-            System.out.println(getName() + " roars and scratches you!");
-        }
-        setIsFriendly();
     }
 }
+ 
 
